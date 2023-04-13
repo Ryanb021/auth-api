@@ -1,13 +1,19 @@
 'use strict';
 
-const userModel = require('./users.js');
 const { Sequelize, DataTypes } = require('sequelize');
 
-const DATABASE_URL = process.env.DATABASE_URL || 'sqlite:memory;';
+const booksModel = require('./books/model');
+const Collection = require('./data-collection');
+const userModel = require('./readers');
 
-const sequelize = new Sequelize(DATABASE_URL);
+const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite:memory' : process.env.DATABASE_URL;
+
+const sequelizeDataBase = new Sequelize(DATABASE_URL);
+const books = booksModel(sequelizeDataBase, DataTypes);
 
 module.exports = {
-  db: sequelize,
-  users: userModel(sequelize, DataTypes),
-}
+  db: sequelizeDataBase,
+  books: new Collection(books),
+
+  readers: userModel(sequelizeDataBase, DataTypes),
+};
