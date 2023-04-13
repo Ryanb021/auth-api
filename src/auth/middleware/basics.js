@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
   let [user, pass] = base64.decode(basic).split(':');
 
   try {
-    req.user = await.readers.authenticateBasic(user, pass);
+    req.user = await readers.authenticateBasic(user, pass);
     next();
   } catch (e) {
     _authError();
