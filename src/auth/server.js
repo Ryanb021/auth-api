@@ -8,8 +8,8 @@ const express = require('express');
 // Esoteric Resources
 const errorNotFound = require('./error-handlers/404');
 const errorHandler = require('./error-handlers/500.js');
-const logger = require('./middleware/logger.js')
-const v1Routes = require('../routes/v1.js')
+const logger = require('./middleware/logger.js');
+const v1Routes = require('../routes/v1.js');
 const authRoutes = require('../auth/routes.js');
 
 // Prepare the express app
@@ -34,7 +34,7 @@ app.use(errorHandler);
 module.exports = {
   server: app,
   start: port => {
-      if (!port) { throw new Error('Port not found'); }
-      app.listen(port, () => console.log(`Listening on ${port}`));
-    },
+    if (!port) { throw new Error('Port not found'); }
+    app.listen(port, () => console.log(`Listening on ${port}`));
+  },
 };
