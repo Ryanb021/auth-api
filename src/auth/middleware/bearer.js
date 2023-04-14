@@ -3,8 +3,8 @@
 const { readers } = require('../models');
 
 module.exports = async (req, res, next) => {
-  try{
-    if(!req.headers.authorization) { _authError(); }
+  try {
+    if (!req.headers.authorization) { _authError(); }
 
     const token = req.headers.authorization.split(' ').pop();
     const validUser = await readers.authenticateToken(token);

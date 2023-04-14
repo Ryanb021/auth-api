@@ -2,8 +2,8 @@
 
 const booksModel = (sequelize, DataTypes) => sequelize.define('books', {
   name: { type: DataTypes.STRING, required: true },
-  category: { type: DataTypes.STRING, required: false },
-  author: { type: DataTypes.STRING, required: false },
+  price: { type: DataTypes.INTEGER, required: false },
+  type: { type: DataTypes.STRING, required: false },
 });
 
 module.exports = booksModel;

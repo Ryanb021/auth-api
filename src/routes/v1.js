@@ -11,7 +11,7 @@ router.param('model', (req, res, next) => {
     next();
   } else {
     next('Model Invalid');
-   }
+  }
 });
 
 router.get('/:model', handleGetAll);
@@ -50,4 +50,4 @@ async function handleDelete(req, res) {
   res.status(200).json(deleteRecord);
 }
 
-module.exports =  router;
+module.exports = router;

@@ -1,6 +1,6 @@
 'use strict';
 
-const express =  require('express');
+const express = require('express');
 const dataModules = require('../auth/models/index');
 const router = express.Router();
 const bearerAuth = require('../auth/middleware/bearer');
@@ -13,7 +13,7 @@ router.param('model', (req, res, next) => {
     next();
   } else {
     next('Model Invalid');
-   }
+  }
 });
 
 router.get('/:model', bearerAuth, handleGetAll);
@@ -52,4 +52,4 @@ async function handleDelete(req, res) {
   res.status(200).json(deleteRecord);
 }
 
-module.exports =  router;
+module.exports = router;
