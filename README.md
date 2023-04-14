@@ -147,7 +147,7 @@ Refer to the the [Submitting Express Server Lab Submission Instructions](../../.
 
 ## UML
 
-- In progress
+- ![Lab 8 UML](https://user-images.githubusercontent.com/120413183/231937145-a629e6a6-acdd-4ffc-97b2-90a4dd40acaf.png)
 
 ## Deployed Server on Render
 
