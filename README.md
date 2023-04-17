@@ -151,4 +151,4 @@ Refer to the the [Submitting Express Server Lab Submission Instructions](../../.
 
 ## Deployed Server on Render
 
-- [In progress](https://the-dark-knight-auth-api.onrender.com)
+- https://the-dark-knight-auth-api.onrender.com
