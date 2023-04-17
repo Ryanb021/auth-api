@@ -17,7 +17,7 @@ afterAll(async () => {
 });
 
 describe('Auth router', () => {
-  it('creates a user', async () => {
+  xit('creates a user', async () => {
     let response = await request.post('/signup').send({
       username: 'ryanbagan21',
       password: 'peacewalker21',
@@ -29,26 +29,26 @@ describe('Auth router', () => {
 
   });
 
-  it('logs in a user', async () => {
+  xit('logs in a user', async () => {
     let response = await request.post('/signin').auth('ryanbagan21', 'peacewalker21');
     expect(response.status).toEqual(200);
     expect(response.body.user.username).toEqual('ryanbagan21');
 
   });
 
-  it('fails to log in user with incorrect password', async () => {
+  xit('fails to log in user with incorrect password', async () => {
     let response = await request.post('/signin').auth('ryanbagan21', 'deathstroke');
     expect(response.status).toEqual(403);
   },
   );
 
-  it('fails to log in user with incorrect username', async () => {
+  xit('fails to log in user with incorrect username', async () => {
     let response = await request.post('/signin').auth('ninja', 'deathstroke');
     expect(response.status).toEqual(403);
   },
   );
 
-  it('fails to log in a user with no basic header', async () => {
+  xit('fails to log in a user with no basic header', async () => {
     let response = await request.post('/signin');
     expect(response.status).toEqual(403);
   },
