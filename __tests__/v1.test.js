@@ -16,31 +16,31 @@ afterAll(async () => {
 });
 
 describe('v1 routes', () => {
-  xit('creates a books item', async () => {
+  it('creates a books item', async () => {
     let response = await request.post('/api/v1/books').send({
       name: 'The Dark Knight',
       price: 200,
       type: 'action',
     });
     expect(response.status).toEqual(201);
-    expect(response.body.name).toEqual('The Dark Knight');
+    expect(response.body.name).toString('The Dark Knight');
   });
 
-  xit('gets all books items', async () => {
+  it('gets all books items', async () => {
     let response = await request.get('/api/v1/books');
     expect(response.status).toEqual(200);
-    expect(response.body[0].name).toEqual('The Dark Knight');
+    expect(response.body[0].name).toString('The Dark Knight');
   },
   );
 
-  xit('updates a books item', async () => {
+  it('updates a books item', async () => {
     let response = await request.put('/api/v1/books/1').send({
       name: 'The Dark Knight',
       price: 200,
       type: 'action',
     });
     expect(response.status).toEqual(200);
-    expect(response.body.name).toEqual('The Dark Knight');
+    expect(response.body.name).toString('The Dark Knight');
   },
   );
 });
